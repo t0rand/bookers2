@@ -1,0 +1,27 @@
+<h1>Books</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag current_user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% end %>

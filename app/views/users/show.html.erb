@@ -1,0 +1,28 @@
+<%= render 'info', user: @user %>
+<%= render 'books/new' %>
+
+<h2>Books</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+      <th>title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+      </td>
+      <td>
+        <%= book.title %>
+      </td>
+      <td>
+        <%= book.body %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
