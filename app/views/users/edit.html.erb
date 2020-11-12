@@ -1,3 +1,18 @@
+<div class="container">
+
+<% if @user.errors.any? %>
+    <div id="error_exaplanation">
+		<%= @user.errors.count %>error
+		<ul>
+			<% @user.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+    <div class"row">
+        <div class="col-md-6">
 <%= form_with model:@user, local: true do |f| %>
   <h1>User info</h1>
   <h4>Name</h4>
@@ -10,3 +25,6 @@
   <%= f.submit 'Update User' %>
   <br>
 <% end %>
+</div>
+</div>
+</div>

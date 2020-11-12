@@ -1,6 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
 <%= render 'info', user: @user %>
 <%= render 'books/new' %>
+</div>
 
+        <div class="col-xs-9">
 <h2>Books</h2>
 <table class="table">
   <thead>
@@ -14,15 +19,18 @@
     <% @books.each do |book| %>
     <tr>
       <td>
-        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+        <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
       </td>
       <td>
-        <%= book.title %>
+        <%= link_to book.title, book_path(book) %>
       </td>
       <td>
         <%= book.body %>
       </td>
     </tr>
+    <% end %>
   </tbody>
 </table>
-<% end %>
+</div>
+</div>
+</div>
